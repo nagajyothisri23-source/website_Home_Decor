@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – Home Decor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background: linear-gradient(to bottom, #f5f2f0, #e9edf2);
+  color:#111;
+  font-family:"Poppins", sans-serif;
+  scroll-behavior:smooth;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #0b2a59; /* navbar background dark */
+  padding: 6px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Playfair Display", serif;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 40px; /* very big logo */
+  color: #ffffff; /* logo color light */
+  font-weight: 700;
+  transition: 0.4s;
+}
+
+.logo:hover {
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: #ffffff; /* link color light */
+  position: relative;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c9a74f; /* gold underline on hover */
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:75vh;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.35)),
+    url("https://images.unsplash.com/photo-1600210492493-0946911123ea") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-content{
+  color:#fff;
+  max-width:800px;
+}
+.hero h1{
+  font-size:52px;
+  font-family:"Playfair Display", serif;
+}
+.hero p{
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.7;
+  opacity:.95;
+}
+
+/* ===== SECTIONS ===== */
+section{padding:60px 50px;}
+.section-title{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:30px;
+  color:#0b2a59;
+  font-family:"Playfair Display", serif;
+}
+.section-text{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  font-size:16.5px;
+  line-height:1.7;
+  color:#444;
+}
+
+/* ===== PHILOSOPHY ===== */
+.philosophy{
+  background:#fff;
+  border-radius:25px;
+  padding:40px;
+  max-width:1000px;
+  margin:auto;
+  box-shadow:0 25px 55px rgba(0,0,0,.12);
+}
+.philosophy img{
+  margin-top:20px;
+  border-radius:20px;
+  width:100%;
+}
+
+/* ===== PRINCIPLES ===== */
+.principles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  margin-top:35px;
+}
+.principle-card{
+  background:#fff;
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  transition:.4s;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+.principle-card i{
+  font-size:32px;
+  color:#c9a74f;
+  margin-bottom:12px;
+}
+.principle-card h3{
+  color:#0b2a59;
+  margin-bottom:10px;
+}
+.principle-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 22px 45px rgba(0,0,0,.18);
+}
+
+/* ===== STORY SPLIT ===== */
+.story{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-top:50px;
+}
+.story img{
+  width:100%;
+  border-radius:25px;
+  box-shadow:0 25px 55px rgba(0,0,0,.18);
+}
+.story-text h2{
+  font-family:"Playfair Display", serif;
+  font-size:32px;
+  color:#0b2a59;
+  margin-bottom:18px;
+}
+.story-text p{
+  font-size:16.5px;
+  line-height:1.7;
+  color:#444;
+}
+
+/* ===== GRID INFO ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr); /* 3 columns */
+  gap:25px; /* space between cards */
+  margin-top:40px;
+}
+
+@media(max-width:900px){
+  .info-grid{
+    grid-template-columns:repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media(max-width:600px){
+  .info-grid{
+    grid-template-columns:1fr; /* 1 column for mobile */
+  }
+}
+
+.info-card{
+  background:#fff;
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.info-card i{
+  font-size:32px;
+  color:#c9a74f;
+  margin-bottom:12px;
+}
+.info-card h3{
+  color:#0b2a59;
+  margin-bottom:8px;
+}
+.info-card p{
+  font-size:16px;
+  color:#444;
+  line-height:1.7;
+}
+.info-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+
+/*====LOCATION====*/
+
+/* ===== VISIT OUR STORE ===== */
+.location-box{
+  background:#fff;
+  padding:50px 40px;
+  border-radius:25px;
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.12);
+  transition:.4s;
+}
+.location-box:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 55px rgba(0,0,0,.18);
+}
+.location-box h3{
+  color:#0b2a59;
+  margin-bottom:12px;
+}
+.location-box p{
+  font-size:16.5px;
+  color:#444;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+/* STORE CONTACT GRID */
+.store-details{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:25px;
+  margin-bottom:30px;
+}
+.store-contact{
+  background:#f9f9f9;
+  padding:18px 12px;
+  border-radius:15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.store-contact i{
+  font-size:28px;
+  color:#c9a74f;
+  margin-bottom:8px;
+}
+.store-contact p{
+  font-size:15px;
+  color:#333;
+}
+.store-contact:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* STORE IMAGE */
+.store-img{
+  width:100%;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  transition:.4s;
+}
+.store-img:hover{
+  transform:scale(1.02);
+}
+
+
+/* ===== EMOTIONAL CLOSING ===== */
+/* ===== EMOTIONAL CLOSING ===== */
+.emotional-close {
+  position:relative;
+  color:#fff;
+  padding:100px 40px;
+  text-align:center;
+  overflow:hidden;
+}
+
+.emotional-bg {
+  background: linear-gradient(rgba(11,42,89,.75), rgba(11,42,89,.85)),
+              url("https://images.unsplash.com/photo-1598300053553-6c0e2b9d7f57") center/cover no-repeat;
+  border-radius:25px;
+  padding:80px 40px;
+  max-width:1000px;
+  margin:auto;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+  transition:transform .4s, box-shadow .4s;
+}
+
+.emotional-bg:hover {
+  transform:translateY(-5px);
+  box-shadow:0 40px 80px rgba(0,0,0,.35);
+}
+
+.emotional-content h2 {
+  font-family:"Playfair Display", serif;
+  font-size:42px;
+  margin-bottom:25px;
+  letter-spacing:1px;
+}
+
+.emotional-content p {
+  font-size:18px;
+  line-height:1.8;
+  max-width:850px;
+  margin:auto;
+  color:#f8f1e7;
+}
+
+.emotional-line {
+  width:80px;
+  height:3px;
+  background:#c9a74f;
+  margin:30px auto 0;
+  border-radius:2px;
+}
+
+@media(max-width:900px){
+  .emotional-bg{
+    padding:60px 25px;
+  }
+  .emotional-content h2{
+    font-size:32px;
+  }
+  .emotional-content p{
+    font-size:16px;
+  }
+}
+
+
+/* ===== FOOTER ===== */
+.decor-footer{
+  background:linear-gradient(135deg, #0b2a59, #020c1b);
+  color:#ffffff;
+  position:relative;
+  overflow:hidden;
+  padding:60px 50px 25px;
+  font-family:"Poppins", sans-serif;
+}
+
+/* TOP GRID */
+.footer-top{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+  position:relative;
+  z-index:2;
+}
+
+/* HEADINGS */
+.footer-col h4{
+  font-size:14px;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+  font-weight:600;
+  color:#c9a74f; /* GOLD */
+}
+
+/* LINKS */
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:10px;
+}
+
+.footer-col ul li a{
+  color:#e6ecf5;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.85;
+  transition:.3s;
+}
+
+.footer-col ul li a:hover{
+  color:#c9a74f;
+  padding-left:6px;
+}
+
+/* GET IN TOUCH */
+.footer-col p{
+  font-size:14px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  opacity:.9;
+}
+
+.footer-col i{
+  margin-right:8px;
+  color:#c9a74f;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+  display:flex;
+  gap:14px;
+  margin:15px 0 25px;
+}
+
+.footer-social a{
+  width:38px;
+  height:38px;
+  border:1px solid rgba(201,167,79,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c9a74f;
+  transition:.35s;
+}
+
+.footer-social a:hover{
+  background:#c9a74f;
+  color:#020c1b;
+  transform:translateY(-4px);
+}
+
+/* APP TEXT */
+.footer-col h5{
+  font-size:13px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  letter-spacing:.5px;
+}
+
+/* APP BUTTONS */
+.footer-apps img{
+  height:38px;
+  margin-right:10px;
+  filter:brightness(1.05);
+}
+
+/* BIG BRAND TEXT */
+.footer-brand-text{
+  position:absolute;
+  bottom:55px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:140px;
+  font-family:"Playfair Display", serif;
+  letter-spacing:14px;
+  color:#ffffff;
+  opacity:.05;
+  white-space:nowrap;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#e6ecf5;
+  opacity:.85;
+  position:relative;
+  z-index:2;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:18px;
+}
+
+.payments img{
+  height:22px;
+  margin-left:8px;
+  filter:brightness(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .footer-top{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-brand-text{
+    font-size:90px;
+  }
+}
+
+@media(max-width:600px){
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .footer-brand-text{
+    display:none;
+  }
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-image{
+    width:100%;
+  }
+
+  .socials a{
+    margin:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Home Decor</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Store Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Who We Are & How We Design</h1>
+    <p>A refined journey into thoughtful design, timeless aesthetics, and curated living experiences.</p>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section>
+  <h2 class="section-title reveal">What Home Decor Means To Us</h2>
+  <p class="section-text reveal">
+    Home Decor is more than objects, colors, and textures—it is the silent language of a home. Every piece we select, every corner we design, tells a story of care, balance, and intention.
+To us, home decor is the art of creating spaces that breathe comfort, inspire creativity, and reflect the personalities of those who dwell within. It is about harmonizing aesthetics with emotion, function with elegance, and tradition with modernity.
+Each vase, textile, light fixture, or accent is chosen not just for its beauty, but for the way it makes a space feel — warm, inviting, and alive. Home Decor is our promise to turn interiors into experiences, and houses into homes.
+  </p>
+</section>
+
+<!-- PHILOSOPHY -->
+<section>
+  <div class="philosophy reveal">
+    <h2 class="section-title">Our Philosophy</h2>
+    <p class="section-text">
+      We believe decor is not just about aesthetics — it is about how a space makes you feel.
+      Every piece should add meaning, warmth, and quiet confidence. Our philosophy centers on thoughtful
+      curation, refined materials, and designs that age gracefully with time.
+    </p>
+    <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="Decor Philosophy">
+    <img src="https://images.unsplash.com/photo-1600180758895-0d6f1b4f5c4c" alt="Decor Inspiration">
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section>
+  <h2 class="section-title reveal">Core Values & Principles</h2>
+  <div class="principles">
+    <div class="principle-card reveal">
+      <i class="fa-solid fa-gem"></i>
+      <h3>Quality Craftsmanship</h3>
+      <p>Every piece is meticulously crafted for lasting beauty and durability.</p>
+    </div>
+    <div class="principle-card reveal">
+      <i class="fa-solid fa-clock"></i>
+      <h3>Timeless Design</h3>
+      <p>Elegant designs that stay relevant across trends and seasons.</p>
+    </div>
+    <div class="principle-card reveal">
+      <i class="fa-solid fa-feather"></i>
+      <h3>Thoughtful Selection</h3>
+      <p>Pieces chosen to complement spaces and lifestyles with subtle luxury.</p>
+    </div>
+    <div class="principle-card reveal">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h3>Customer Promise</h3>
+      <p>We provide transparency, premium quality, and an unforgettable experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section>
+  <div class="story reveal">
+    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="Store Story">
+    <div class="story-text">
+      <h2>The Story So Far</h2>
+      <p>
+        Our journey is still evolving. What began as a vision for refined interiors is gradually shaping
+        into a space where design lovers can explore, experience, and connect with meaningful decor.
+        As we grow, our focus remains unchanged — to curate pieces that bring balance, texture, and elegance
+        into everyday living.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS & CATEGORIES -->
+<section>
+  <h2 class="section-title reveal">Our Products & Categories</h2>
+  <div class="info-grid">
+    <div class="info-card reveal">
+      <i class="fa-solid fa-vase"></i>
+      <h3>Vases & Accents</h3>
+      <p>Elegant decorative pieces that enhance your interiors.</p>
+    </div>
+    <div class="info-card reveal">
+      <i class="fa-solid fa-couch"></i>
+      <h3>Furniture & Textiles</h3>
+      <p>Curated items that combine comfort, design, and style.</p>
+    </div>
+    <div class="info-card reveal">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Lighting & Sculptures</h3>
+      <p>Artful designs that add character and warmth to spaces.</p>
+    </div>
+    <div class="info-card reveal">
+      <i class="fa-solid fa-palette"></i>
+      <h3>Wall Art & Decor</h3>
+      <p>Carefully selected art pieces that reflect elegance and personality.</p>
+    </div>
+    <div class="info-card reveal">
+      <i class="fa-solid fa-couch"></i>
+      <h3>Planters & Greenery</h3>
+      <p>Beautifully designed planters that bring life to interiors.</p>
+    </div>
+    <div class="info-card reveal">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Tabletop & Accessories</h3>
+      <p>Functional yet decorative items for everyday living.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- LOCATION -->
+<!-- VISIT OUR STORE -->
+<section>
+  <div class="location-box reveal">
+    <h2 class="section-title">Visit Our Store</h2>
+    <h3>HD Home Decor</h3>
+
+    <p>
+      📍 Opp. Old Murali Theatre,<br>
+      Women’s College Road,<br>
+      Srikakulam – 532001, Andhra Pradesh<br><br>
+      Living Lives Your Dreams.<br>
+      Experience premium interior & home décor solutions including
+      curtains, wallpapers, flooring, blinds, murals, and turnkey projects
+      crafted with elegance and innovation.
+    </p>
+
+    <div class="store-details">
+      <div class="store-contact">
+        <i class="fa-solid fa-phone"></i>
+        <p>+91 96661 93636</p>
+      </div>
+
+      <div class="store-contact">
+        <i class="fa-solid fa-envelope"></i>
+        <p>homedecor3636@gmail.com</p>
+      </div>
+
+      <div class="store-contact">
+        <i class="fa-solid fa-clock"></i>
+        <p>Mon – Sat: 10:00 AM – 7:00 PM</p>
+      </div>
+    
+</section>
+
+
+<!-- EMOTIONAL CLOSING -->
+<!-- EMOTIONAL CLOSING -->
+<section class="emotional-close reveal">
+  <div class="emotional-bg">
+    <div class="emotional-content">
+      <h2>Design That Feels Like Home</h2>
+      <p>
+        At Home Decor, we believe a home should comfort, inspire, and reflect the people who live in it. 
+        Every curated piece brings warmth, balance, and subtle luxury to spaces where life truly happens. 
+        Let your home tell a story of elegance, care, and personality.
+      </p>
+      <div class="emotional-line"></div>
+    </div>
+  </div>
+</section>
+
+
+<!---footer-->
+<footer class="decor-footer">
+
+  <div class="footer-top">
+
+    <!-- SUPPORT -->
+    <div class="footer-col">
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        
+      </ul>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+  
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">The Blog</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Easy Returns</a></li>
+        <li><a href="#">B2B Trade</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-col">
+      <h4>GET IN TOUCH</h4>
+
+      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
+      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
+    </div>
+
+    <!-- FOLLOW US -->
+    <div class="footer-col">
+      <h4>FOLLOW US</h4>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <h5>EXPERIENCE THE HOME DECOR APP</h5>
+
+      
+    </div>
+
+  </div>
+
+  <!-- BIG BACKGROUND BRAND TEXT -->
+  <div class="footer-brand-text">
+    HOME DECOR
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2026 Home Decor. All Rights Reserved.</p>
+    
+  </div>
+
+</footer>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 50){
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

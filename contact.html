@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Home Decor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:linear-gradient(to bottom,#f5f2f0,#e9edf2);
+  font-family:"Poppins",sans-serif;
+  color:#111;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #0b2a59; /* navbar background dark */
+  padding: 6px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Playfair Display", serif;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 40px; /* very big logo */
+  color: #ffffff; /* logo color light */
+  font-weight: 700;
+  transition: 0.4s;
+}
+
+.logo:hover {
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: #ffffff; /* link color light */
+  position: relative;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c9a74f; /* gold underline on hover */
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO ===== */
+.contact-hero{
+  padding:90px 70px 45px;
+  background:#fff;
+  animation:fadeUp 1s ease;
+}
+.contact-hero h1{
+  font-size:44px;
+  color:#0b2a59;
+}
+.contact-hero p{
+  margin-top:12px;
+  max-width:520px;
+  color:#444;
+}
+
+/* ===== GRID ===== */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  padding:70px;
+}
+
+/* ===== IMAGE ===== */
+.contact-image{
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+  transition:.6s;
+}
+.contact-image:hover{
+  transform:translateY(-8px);
+  box-shadow:0 45px 80px rgba(0,0,0,.25);
+}
+.contact-image img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  transition:1s;
+}
+.contact-image:hover img{transform:scale(1.08);}
+
+/* ===== FORM ===== */
+.contact-form{
+  background:#fff;
+  padding:45px;
+  border-radius:22px;
+  box-shadow:0 25px 50px rgba(0,0,0,.12);
+  transition:.5s;
+}
+.contact-form:hover{
+  transform:translateY(-6px);
+  box-shadow:0 40px 80px rgba(0,0,0,.22);
+}
+.contact-form label{
+  font-size:14px;
+  color:#444;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  padding:14px 16px;
+  margin:8px 0 20px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  transition:.3s;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#0b2a59;
+  box-shadow:0 0 0 3px rgba(11,42,89,.12);
+}
+.contact-form button{
+  background:#0b2a59;
+  color:#fff;
+  padding:15px 38px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.4s;
+}
+.contact-form button:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px rgba(11,42,89,.35);
+}
+
+/* ===== INFO ===== */
+.contact-info{
+  padding:0 70px 70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+.info-card{
+  background:#fff;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,.1);
+  transition:.4s;
+}
+.info-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 50px rgba(0,0,0,.18);
+}
+
+/* ===== MAP ===== */
+.map-section{
+  margin:0 70px 80px;
+  text-align:center;
+}
+.map-title{
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  color:#0b2a59;
+  margin-bottom:8px;
+}
+.map-sub{
+  color:#555;
+  margin-bottom:28px;
+}
+.map-container{
+  border-radius:22px;
+  overflow:hidden;
+  border:1.5px solid rgba(201,167,79,.55);
+  box-shadow:0 22px 45px rgba(0,0,0,.15);
+  transition:.5s;
+}
+.map-container:hover{
+  transform:translateY(-6px);
+  box-shadow:0 35px 70px rgba(11,42,89,.25);
+}
+.map-container iframe{
+  width:100%;
+  height:380px;
+  border:0;
+}
+
+/* ===== FAQ ===== */
+.faq{
+  background:#fff;
+  margin:0 70px 70px;
+  padding:50px;
+  border-radius:22px;
+  box-shadow:0 25px 45px rgba(0,0,0,.1);
+}
+.faq h2{
+  text-align:center;
+  font-family:"Playfair Display",serif;
+  color:#0b2a59;
+  margin-bottom:30px;
+}
+.faq-item{
+  border-bottom:1px solid #eee;
+  padding:18px 0;
+  cursor:pointer;
+}
+.faq-item h4{
+  font-weight:500;
+  position:relative;
+}
+.faq-item h4::after{
+  content:"+";
+  position:absolute;
+  right:0;
+}
+.faq-item p{
+  max-height:0;
+  overflow:hidden;
+  color:#555;
+  transition:max-height .4s ease;
+}
+.faq-item.active p{
+  max-height:120px;
+  margin-top:10px;
+}
+.faq-item.active h4::after{content:"–";}
+
+/* ===== REASSURANCE ===== */
+.reassurance{
+  max-width:900px;
+  margin:80px auto;
+  padding:30px 40px;
+  background:#fff;
+  border-radius:18px;
+  border:1.5px solid rgba(201,167,79,.55);
+  text-align:center;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+.reassurance p{
+  font-family:"Playfair Display",serif;
+  font-size:18px;
+  color:#0b2a59;
+}
+
+/* ===== FOOTER ===== */
+.decor-footer{
+  background:linear-gradient(135deg, #0b2a59, #020c1b);
+  color:#ffffff;
+  position:relative;
+  overflow:hidden;
+  padding:60px 50px 25px;
+  font-family:"Poppins", sans-serif;
+}
+
+/* TOP GRID */
+.footer-top{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+  position:relative;
+  z-index:2;
+}
+
+/* HEADINGS */
+.footer-col h4{
+  font-size:14px;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+  font-weight:600;
+  color:#c9a74f; /* GOLD */
+}
+
+/* LINKS */
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:10px;
+}
+
+.footer-col ul li a{
+  color:#e6ecf5;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.85;
+  transition:.3s;
+}
+
+.footer-col ul li a:hover{
+  color:#c9a74f;
+  padding-left:6px;
+}
+
+/* GET IN TOUCH */
+.footer-col p{
+  font-size:14px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  opacity:.9;
+}
+
+.footer-col i{
+  margin-right:8px;
+  color:#c9a74f;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+  display:flex;
+  gap:14px;
+  margin:15px 0 25px;
+}
+
+.footer-social a{
+  width:38px;
+  height:38px;
+  border:1px solid rgba(201,167,79,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c9a74f;
+  transition:.35s;
+}
+
+.footer-social a:hover{
+  background:#c9a74f;
+  color:#020c1b;
+  transform:translateY(-4px);
+}
+
+/* APP TEXT */
+.footer-col h5{
+  font-size:13px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  letter-spacing:.5px;
+}
+
+/* APP BUTTONS */
+.footer-apps img{
+  height:38px;
+  margin-right:10px;
+  filter:brightness(1.05);
+}
+
+/* BIG BRAND TEXT */
+.footer-brand-text{
+  position:absolute;
+  bottom:55px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:140px;
+  font-family:"Playfair Display", serif;
+  letter-spacing:14px;
+  color:#ffffff;
+  opacity:.05;
+  white-space:nowrap;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#e6ecf5;
+  opacity:.85;
+  position:relative;
+  z-index:2;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:18px;
+}
+
+.payments img{
+  height:22px;
+  margin-left:8px;
+  filter:brightness(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .footer-top{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-brand-text{
+    font-size:90px;
+  }
+}
+
+@media(max-width:600px){
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .footer-brand-text{
+    display:none;
+  }
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-image{
+    width:100%;
+  }
+
+  .socials a{
+    margin:8px;
+  }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  header{padding:16px 25px;}
+  .contact-hero{padding:60px 25px 35px;}
+  .contact-grid{grid-template-columns:1fr;padding:40px 25px;}
+  .contact-image img{height:320px;}
+  .contact-info{padding:0 25px 50px;}
+  .map-section{margin:0 25px 60px;}
+  .faq{margin:0 25px 60px;padding:35px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Home Decor</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Store Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="contact-hero">
+  <h1>Contact our Store</h1>
+  <p>Every conversation begins with trust. Let’s connect.</p>
+</section>
+
+<section class="contact-grid">
+  <div class="contact-image">
+    <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed">
+  </div>
+
+  <div class="contact-form">
+    <form id="contactForm">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="subject">Subject:</label>
+  <select id="subject" name="subject" required>
+    <option value="product-inquiry">Product Inquiry</option>
+    <option value="custom-orders">Custom Orders</option>
+    <option value="bulk-orders">Bulk/Corporate Orders</option>
+    <option value="styling-assistance">Styling Assistance</option>
+    <option value="general-question">General Question</option>
+  </select>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault(); // prevent the default form submission
+  // you can optionally send the data via fetch/ajax here
+  window.location.href = "thankyou.html"; // redirect to thankyou page
+});
+</script>
+
+  </div>
+</section>
+
+<section class="contact-info">
+  <div class="info-card">
+    <strong>Email</strong><br>
+    homedecor3636@gmail.com
+  </div>
+
+  <div class="info-card">
+    <strong>Phone</strong><br>
+    +91 96661 93636
+  </div>
+
+  <div class="info-card">
+    <strong>Business Hours</strong><br>
+    Mon – Sat | 10:00 AM – 7:00 PM
+  </div>
+
+  <div class="info-card">
+    <strong>Address</strong><br>
+    Opp. Old Murali Theatre,<br>
+    Women’s College Road,<br>
+    Srikakulam – 532001,<br>
+    Andhra Pradesh
+  </div>
+</section>
+
+<section class="map-section">
+  <h2 class="map-title">Visit Our Store</h2>
+  <p class="map-sub">HD Home Decor – Living Lives Your Dreams</p>
+
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=Opp+Old+Murali+Theatre,+Srikakulam,+Andhra+Pradesh&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Quick Help</h2>
+  <div class="faq-item"><h4>Do you offer styling guidance?</h4><p>Yes, thoughtful guidance tailored to your space.</p></div>
+  <div class="faq-item"><h4>Is this an online store?</h4><p>No, this is a design showcase and contact platform.</p></div>
+  <div class="faq-item"><h4>When will you respond?</h4><p>Within 24–48 business hours.</p></div>
+  <div class="faq-item"><h4>Do you handle corporate decor?</h4><p>Yes, for display and consultation purposes.</p></div>
+  <div class="faq-item"><h4>Why Home Decor?</h4><p>Because thoughtful spaces create lasting impressions.</p></div>
+</section>
+
+<section class="reassurance">
+  <p>
+    Thoughtfully curated spaces inspire calm, confidence, and timeless elegance.
+  </p>
+</section>
+
+<footer class="decor-footer">
+
+  <div class="footer-top">
+
+    <!-- SUPPORT -->
+    <div class="footer-col">
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        
+      </ul>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+  
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">The Blog</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Easy Returns</a></li>
+        <li><a href="#">B2B Trade</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-col">
+      <h4>GET IN TOUCH</h4>
+
+      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
+      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
+    </div>
+
+    <!-- FOLLOW US -->
+    <div class="footer-col">
+      <h4>FOLLOW US</h4>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <h5>EXPERIENCE THE HOME DECOR APP</h5>
+
+      
+    </div>
+
+  </div>
+
+  <!-- BIG BACKGROUND BRAND TEXT -->
+  <div class="footer-brand-text">
+    HOME DECOR
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2026 Home Decor. All Rights Reserved.</p>
+    
+  </div>
+
+</footer>
+<script>
+document.querySelectorAll(".faq-item").forEach(item=>{
+  item.addEventListener("click",()=>item.classList.toggle("active"));
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Decor – Premium Living</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ===== GLOBAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background: linear-gradient(to bottom, #f5f5f5, #e9edf2);
+  color:#111;
+  font-family:"Poppins", sans-serif;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #0b2a59; /* navbar background dark */
+  padding: 6px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Playfair Display", serif;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 40px; /* very big logo */
+  color: #ffffff; /* logo color light */
+  font-weight: 700;
+  transition: 0.4s;
+}
+
+.logo:hover {
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #ffffff; /* link color light */
+  position: relative;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c9a74f; /* gold underline on hover */
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* ===== HERO ===== */
+.hero{
+  height:85vh;
+  background:url("https://images.unsplash.com/photo-1615874959474-d609969a20ed") center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-content{
+  text-align:center;
+  animation:fadeUp 1.5s ease;
+}
+
+/* BUTTON AT IMAGE EDGE */
+.btn{
+  padding:15px 38px;
+  border:2px solid transparent;
+  background:#0b2a59;
+  color:#fff;
+  border-radius:30px;
+  cursor:pointer;
+  transition:all .4s ease;
+
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+}
+
+/* GOLD EDGE ON HOVER */
+.btn:hover{
+  box-shadow:
+    0 0 8px rgba(212,175,55,.6),
+    0 0 16px rgba(212,175,55,.45),
+    0 12px 30px rgba(212,175,55,.4);
+  transform:translateX(-50%) translateY(-3px);
+}
+
+/* ===== SECTION COMMON ===== */
+section{padding:70px 70px;}
+.section-title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:32px;
+  color:#0b2a59;
+  font-family:"Playfair Display", serif;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== BRAND INTRO ===== */
+.brand-intro{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+.brand-intro p{
+  font-size:16.5px;
+  line-height:1.65;
+  color:#444;
+}
+
+/* ===== PRINCIPLES ===== */
+.principles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+  margin-top:45px;
+}
+.principle-card{
+  background:#fff;
+  padding:28px;
+  border-radius:20px;
+  text-align:center;
+  transition:.4s;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+.principle-card i{
+  font-size:30px;
+  color:#c9a74f;
+  margin-bottom:14px;
+  transition:.4s;
+}
+.principle-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 22px 45px rgba(0,0,0,.18);
+}
+.principle-card:hover i{
+  transform:scale(1.2) rotate(5deg);
+}
+
+/* ===== CURATION ===== */
+.curation{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+.curation p{
+  font-size:16px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* ===== DISPLAY ===== */
+.gifting{text-align:center;}
+.gift-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+  margin-top:35px;
+}
+.gift-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.4s;
+}
+.gift-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  transition:.6s;
+}
+.gift-card:hover img{
+  transform:scale(1.08);
+}
+.gift-card h3{
+  padding:14px;
+  color:#0b2a59;
+}
+.gift-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+/* ===== STORE EXPERIENCE ===== */
+.store-exp{
+  background:rgba(255,255,255,.95);
+  border-radius:22px;
+  padding:55px;
+  max-width:950px;
+  margin:auto;
+  transition:.5s;
+}
+.store-exp:hover{
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+.store-exp p{
+  font-size:16px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* ===== SIGNATURE COLLECTION ===== */
+.signature{
+  text-align:center;
+  max-width:950px;
+  margin:auto;
+}
+.sig-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+  margin-top:35px;
+}
+.sig-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  padding:20px;
+  transition:.4s;
+}
+.sig-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+.sig-card h3{
+  color:#0b2a59;
+  margin-bottom:8px;
+}
+.sig-desc{
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+/* ================= HOME DECOR FOOTER ================= */
+.decor-footer{
+  background:linear-gradient(135deg, #0b2a59, #020c1b);
+  color:#ffffff;
+  position:relative;
+  overflow:hidden;
+  padding:60px 50px 25px;
+  font-family:"Poppins", sans-serif;
+}
+
+/* TOP GRID */
+.footer-top{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+  position:relative;
+  z-index:2;
+}
+
+/* HEADINGS */
+.footer-col h4{
+  font-size:14px;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+  font-weight:600;
+  color:#c9a74f; /* GOLD */
+}
+
+/* LINKS */
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:10px;
+}
+
+.footer-col ul li a{
+  color:#e6ecf5;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.85;
+  transition:.3s;
+}
+
+.footer-col ul li a:hover{
+  color:#c9a74f;
+  padding-left:6px;
+}
+
+/* GET IN TOUCH */
+.footer-col p{
+  font-size:14px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  opacity:.9;
+}
+
+.footer-col i{
+  margin-right:8px;
+  color:#c9a74f;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+  display:flex;
+  gap:14px;
+  margin:15px 0 25px;
+}
+
+.footer-social a{
+  width:38px;
+  height:38px;
+  border:1px solid rgba(201,167,79,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c9a74f;
+  transition:.35s;
+}
+
+.footer-social a:hover{
+  background:#c9a74f;
+  color:#020c1b;
+  transform:translateY(-4px);
+}
+
+/* APP TEXT */
+.footer-col h5{
+  font-size:13px;
+  margin-bottom:10px;
+  color:#e6ecf5;
+  letter-spacing:.5px;
+}
+
+/* APP BUTTONS */
+.footer-apps img{
+  height:38px;
+  margin-right:10px;
+  filter:brightness(1.05);
+}
+
+/* BIG BRAND TEXT */
+.footer-brand-text{
+  position:absolute;
+  bottom:55px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:140px;
+  font-family:"Playfair Display", serif;
+  letter-spacing:14px;
+  color:#ffffff;
+  opacity:.05;
+  white-space:nowrap;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#e6ecf5;
+  opacity:.85;
+  position:relative;
+  z-index:2;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:18px;
+}
+
+.payments img{
+  height:22px;
+  margin-left:8px;
+  filter:brightness(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .footer-top{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-brand-text{
+    font-size:90px;
+  }
+}
+
+@media(max-width:600px){
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .footer-brand-text{
+    display:none;
+  }
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-image{
+    width:100%;
+  }
+
+  .socials a{
+    margin:8px;
+  }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+  
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">Home Decor</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Store Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <button class="btn" onclick="location.href='products.html'">View Collection</button>
+    </div>
+  </section>
+
+  <!-- BRAND INTRO -->
+  <section>
+    <div class="brand-intro reveal">
+      <h2 class="section-title">Crafted for Modern Living</h2>
+      <p>
+        Designed for contemporary lifestyles, our collection blends refined aesthetics with everyday functionality. Each piece is thoughtfully crafted to complement modern interiors while offering lasting quality, comfort, and visual harmony.
+        From clean lines to rich textures, every detail reflects a balance of sophistication and practicality—created for homes that value both beauty and purpose.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section>
+    <h2 class="section-title reveal">Our Core Principles</h2>
+    <div class="principles">
+      <div class="principle-card reveal">
+        <i class="fa-solid fa-gem"></i>
+        <h3>Refined Selection</h3>
+        <p>Chosen for craftsmanship, material quality, and visual harmony.</p>
+      </div>
+      <div class="principle-card reveal">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Timeless Aesthetics</h3>
+        <p>Designs that remain relevant beyond trends and seasons.</p>
+      </div>
+      <div class="principle-card reveal">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Thoughtful Design</h3>
+        <p>Decor that enhances mood, space, and everyday living.</p>
+      </div>
+      <div class="principle-card reveal">
+        <i class="fa-solid fa-gift"></i>
+        <h3>Versatile Styling</h3>
+        <p>Pieces that blend effortlessly into different interior styles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURATION -->
+  <section>
+    <div class="curation reveal">
+      <h2 class="section-title">What We Curate</h2>
+      <p>
+        Our collection brings together carefully chosen décor elements that transform everyday interiors into expressive, inviting spaces. Every piece is selected with attention to design, material, and finish—ensuring it complements modern lifestyles while maintaining a sense of warmth and refinement.
+        We curate décor that tells a story, enhances ambiance, and adds lasting value to your home.
+      </p>
+    </div>
+  </section>
+
+  <!-- GIFT GRID -->
+  <section class="gifting">
+    <h2 class="section-title reveal">Decor for Inspired Spaces</h2>
+    <div class="gift-grid">
+      <div class="gift-card reveal">
+        <img src="accent.jpg">
+        <h3>Statement Accents</h3>
+      </div>
+      <div class="gift-card reveal">
+        <img src="living_space.jpg">
+        <h3>Calm Living Spaces</h3>
+      </div>
+      <div class="gift-card reveal">
+        <img src="elegance.jpg">
+        <h3>Minimal Elegance</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE EXPERIENCE -->
+  <section>
+    <div class="store-exp reveal">
+      <h2 class="section-title">The In-Store Experience</h2>
+      <p>
+        Our store is a curated visual journey where balance, texture, and craftsmanship come together.
+        Thoughtfully styled displays help visitors experience how decor pieces interact within real spaces.
+        Soft lighting and intentional layouts create a calm, immersive environment that inspires ideas
+        and allows each piece to be appreciated in its own context.
+      </p>
+    </div>
+  </section>
+
+  <!-- SIGNATURE COLLECTION -->
+  <section class="signature reveal">
+    <h2 class="section-title">Signature Collection</h2>
+    <p class="sig-desc">Explore select pieces that embody our design philosophy — timeless, elegant, and thoughtfully curated.</p>
+    <div class="sig-grid">
+      <div class="sig-card">
+        <h3>Elevated Decor Elements</h3>
+        <p class="sig-desc">From elegant vases  to refined tabletop pieces, our elevated decor elements add sophistication.</p>
+      </div>
+      <div class="sig-card">
+        <h3>Decorative Ceramics</h3>
+        <p class="sig-desc">Handcrafted ceramics that combine artful design and functional beauty.</p>
+      </div>
+      <div class="sig-card">
+        <h3>Elegant Accents</h3>
+        <p class="sig-desc">Statement pieces selected for their silhouettes and harmonious proportions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="decor-footer">
+
+  <div class="footer-top">
+
+    <!-- SUPPORT -->
+    <div class="footer-col">
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        
+      </ul>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+  
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">The Blog</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Easy Returns</a></li>
+        <li><a href="#">B2B Trade</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-col">
+      <h4>GET IN TOUCH</h4>
+
+      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
+      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
+    </div>
+
+    <!-- FOLLOW US -->
+    <div class="footer-col">
+      <h4>FOLLOW US</h4>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <h5>EXPERIENCE THE HOME DECOR APP</h5>
+
+      
+    </div>
+
+  </div>
+
+  <!-- BIG BACKGROUND BRAND TEXT -->
+  <div class="footer-brand-text">
+    HOME DECOR
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2026 Home Decor. All Rights Reserved.</p>
+    
+  </div>
+
+</footer>
+
+  <!-- SCRIPTS -->
+  <script>
+  /* Scroll reveal */
+  const reveals = document.querySelectorAll(".reveal");
+  window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if(top < window.innerHeight - 100){ el.classList.add("active"); }
+    });
+  });
+
+  /* Page loader button redirect */
+  function showLoaderAndRedirect(url){
+    const loader = document.getElementById("page-loader");
+    loader.classList.add("active");
+    setTimeout(()=>{ window.location.href = url; }, 1200); // increased loader time
+  }
+
+  /* Hide loader after page load */
+  window.addEventListener("load", () => {
+    setTimeout(() => { 
+      document.getElementById("page-loader").classList.remove("active"); 
+    }, 1200);
+  });
+  </script>
+
+</body>
+</html>
