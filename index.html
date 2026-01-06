@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Decor – Premium Living</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 /* ===== GLOBAL ===== */
@@ -281,8 +283,10 @@ section{padding:70px 70px;}
   position:relative;
   overflow:hidden;
   padding:60px 50px 25px;
-  font-family:"Poppins", sans-serif;
+  font-family:"Cinzel", serif;
 }
+
+
 
 /* TOP GRID */
 .footer-top{
@@ -345,15 +349,17 @@ section{padding:70px 70px;}
 }
 
 .footer-social a{
-  width:38px;
-  height:38px;
-  border:1px solid rgba(201,167,79,.6);
-  display:flex;
+  width:auto;
+  height:auto;
+  border:none;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
   color:#c9a74f;
   transition:.35s;
+  text-decoration: none;
 }
+
 
 .footer-social a:hover{
   background:#c9a74f;
@@ -410,6 +416,46 @@ section{padding:70px 70px;}
   margin-left:8px;
   filter:brightness(1.1);
 }
+/* WE DEAL IN SECTION */
+.footer-deal{
+  text-align:center;
+  padding:40px 20px 20px;
+  margin-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:relative;
+  z-index:2;
+}
+
+.footer-deal h3{
+  font-size:20px;
+  letter-spacing:2px;
+  color:#c9a74f;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.footer-deal p{
+  max-width:1100px;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.9;
+  color:#e6ecf5;
+  opacity:0.9;
+}
+
+.footer-deal span{
+  color:#c9a74f;
+  margin:0 6px;
+}
+
+.footer-deal h4{
+  margin-top:18px;
+  font-size:16px;
+  color:#c9a74f;
+  letter-spacing:1px;
+  font-weight:500;
+}
+
 
 /* RESPONSIVE */
 @media(max-width:992px){
@@ -466,6 +512,126 @@ section{padding:70px 70px;}
     transform:translateY(0);
   }
 }
+/* =====================================================
+   TABLET ONLY (max-width: 1024px)
+   Desktop/Laptop untouched
+===================================================== */
+@media screen and (max-width:1024px){
+
+  section{
+    padding:60px 40px;
+  }
+
+  .hero{
+    height:70vh;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .store-exp{
+    padding:40px;
+  }
+
+  .gift-card img{
+    height:170px;
+  }
+
+  .footer-brand-text{
+    font-size:90px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE ONLY (max-width: 768px)
+   Desktop/Laptop untouched
+===================================================== */
+@media screen and (max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav a{
+    margin:8px 14px;
+    font-size:15px;
+  }
+
+  .hero{
+    height:65vh;
+  }
+
+  .btn{
+    padding:12px 30px;
+    bottom:15px;
+  }
+
+  section{
+    padding:50px 18px;
+  }
+
+  .section-title{
+    font-size:26px;
+  }
+
+  .principles,
+  .gift-grid,
+  .sig-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gift-card img{
+    height:160px;
+  }
+
+  .store-exp{
+    padding:30px 22px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .footer-brand-text{
+    display:none;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE (max-width: 420px)
+===================================================== */
+@media screen and (max-width:420px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .section-title{
+    font-size:23px;
+  }
+
+  .gift-card img{
+    height:145px;
+  }
+}
+
 
 </style>
 </head>
@@ -596,6 +762,25 @@ section{padding:70px 70px;}
 
   <!-- FOOTER -->
   <footer class="decor-footer">
+<!-- WE DEAL IN SECTION -->
+<div class="footer-deal">
+  <h3>WE DEAL IN</h3>
+
+  <p>
+    Artificial Grass <span>|</span> Artifacts <span>|</span> Artificial Flowers <span>|</span>
+    Artificial Plants <span>|</span> Verticle Grass <span>|</span> Blinds <span>|</span>
+    Exterior Blinds <span>|</span> Curtains <span>|</span> Handicrafts <span>|</span>
+    Statues <span>|</span> Planters <span>|</span> Pebble Stones <span>|</span>
+    Indoor & Outdoor Fountains <span>|</span> Vases & Pots <span>|</span>
+    Wall & Floor Carpets <span>|</span> Wall Papers <span>|</span>
+    Wall Murals <span>|</span> Wall Decor <span>|</span> Wall Clocks <span>|</span>
+    Wet Cloth Hangers <span>|</span> Invisible Grills <span>|</span>
+    VOX Ceiling Designs & Wall Panels <span>|</span>
+    Mosquito Sliding Doors & many more
+  </p>
+
+  <h4>WE DO INTERIOR DESIGNS AND WORKS</h4>
+</div>
 
   <div class="footer-top">
 
@@ -620,8 +805,8 @@ section{padding:70px 70px;}
         <li><a href="#">Stores</a></li>
         <li><a href="#">The Blog</a></li>
         <li><a href="#">Gift Cards</a></li>
-        <li><a href="#">Easy Returns</a></li>
-        <li><a href="#">B2B Trade</a></li>
+        
+        
       </ul>
     </div>
 
@@ -629,8 +814,8 @@ section{padding:70px 70px;}
     <div class="footer-col">
       <h4>GET IN TOUCH</h4>
 
-      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
-      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      
+      <p><i class="fa-brands fa-whatsapp"></i> K.Naveen Kumar : +91 9493493636</p>
       <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
       <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
     </div>
@@ -646,7 +831,7 @@ section{padding:70px 70px;}
         <a href="#"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
-      <h5>EXPERIENCE THE HOME DECOR APP</h5>
+      <h5>EXPERIENCE THE HOME DECOR </h5>
 
       
     </div>

@@ -67,6 +67,90 @@
       display: block;
       margin-bottom: 15px;
     }
+    /* =========================
+   RESPONSIVE – ALL DEVICES
+   Mobile • Tablet • Laptop
+   ========================= */
+
+/* ---------- LARGE TABLETS / SMALL LAPTOPS ---------- */
+@media (max-width:1024px){
+  .thankyou-container{
+    padding:45px 55px;
+    max-width:520px;
+  }
+
+  h1{
+    font-size:2.6rem;
+  }
+
+  p{
+    font-size:1.1rem;
+  }
+}
+
+/* ---------- TABLETS ---------- */
+@media (max-width:768px){
+  body{
+    padding:30px 18px;
+    height:auto;
+    min-height:100vh;
+  }
+
+  .thankyou-container{
+    padding:40px 35px;
+    max-width:100%;
+  }
+
+  h1{
+    font-size:2.2rem;
+  }
+
+  p{
+    font-size:1rem;
+  }
+
+  .btn-home{
+    padding:13px 34px;
+    font-size:0.95rem;
+  }
+
+  .emoji{
+    font-size:2.2rem;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width:480px){
+  body{
+    padding:20px 14px;
+  }
+
+  .thankyou-container{
+    padding:30px 22px;
+    border-radius:20px;
+  }
+
+  h1{
+    font-size:1.9rem;
+  }
+
+  p{
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+
+  .btn-home{
+    display:inline-block;
+    width:100%;
+    padding:14px;
+    font-size:0.95rem;
+  }
+
+  .emoji{
+    font-size:2rem;
+  }
+}
+
   </style>
 </head>
 <body>

@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact – Home Decor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -341,15 +343,17 @@ nav a:hover::after {
 }
 
 .footer-social a{
-  width:38px;
-  height:38px;
-  border:1px solid rgba(201,167,79,.6);
-  display:flex;
+  width:auto;
+  height:auto;
+  border:none;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
   color:#c9a74f;
   transition:.35s;
+  text-decoration: none;
 }
+
 
 .footer-social a:hover{
   background:#c9a74f;
@@ -433,6 +437,45 @@ nav a:hover::after {
     display:none;
   }
 }
+/* WE DEAL IN SECTION */
+.footer-deal{
+  text-align:center;
+  padding:40px 20px 20px;
+  margin-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:relative;
+  z-index:2;
+}
+
+.footer-deal h3{
+  font-size:20px;
+  letter-spacing:2px;
+  color:#c9a74f;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.footer-deal p{
+  max-width:1100px;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.9;
+  color:#e6ecf5;
+  opacity:0.9;
+}
+
+.footer-deal span{
+  color:#c9a74f;
+  margin:0 6px;
+}
+
+.footer-deal h4{
+  margin-top:18px;
+  font-size:16px;
+  color:#c9a74f;
+  letter-spacing:1px;
+  font-weight:500;
+}
 
 
 /* RESPONSIVE */
@@ -467,6 +510,180 @@ nav a:hover::after {
   .map-section{margin:0 25px 60px;}
   .faq{margin:0 25px 60px;padding:35px;}
 }
+/* =========================
+   UNIVERSAL RESPONSIVENESS
+   Mobile • Tablet • All Devices
+   ========================= */
+
+/* ---------- LARGE TABLETS (≤1024px) ---------- */
+@media (max-width:1024px){
+
+  .logo{
+    font-size:32px;
+  }
+
+  nav a{
+    font-size:16px;
+    margin-left:20px;
+  }
+
+  .contact-grid{
+    gap:40px;
+    padding:50px;
+  }
+
+  .contact-image img{
+    height:420px;
+  }
+
+  .map-container iframe{
+    height:320px;
+  }
+}
+
+/* ---------- TABLETS (≤768px) ---------- */
+@media (max-width:768px){
+
+  /* HEADER */
+  header{
+    padding:14px 20px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  nav a{
+    margin:10px 14px;
+    font-size:15px;
+  }
+
+  /* HERO */
+  .contact-hero h1{
+    font-size:34px;
+  }
+
+  .contact-hero p{
+    font-size:15px;
+  }
+
+  /* GRID */
+  .contact-grid{
+    grid-template-columns:1fr;
+    padding:35px 20px;
+  }
+
+  .contact-image img{
+    height:300px;
+  }
+
+  .contact-form{
+    padding:30px;
+  }
+
+  /* INFO */
+  .contact-info{
+    padding:0 20px 40px;
+  }
+
+  /* MAP */
+  .map-section{
+    margin:0 20px 60px;
+  }
+
+  .map-container iframe{
+    height:280px;
+  }
+
+  /* FAQ */
+  .faq{
+    margin:0 20px 60px;
+    padding:30px;
+  }
+
+  /* REASSURANCE */
+  .reassurance{
+    margin:60px 20px;
+    padding:25px;
+  }
+}
+
+/* ---------- MOBILE (≤480px) ---------- */
+@media (max-width:480px){
+
+  /* HEADER */
+  .logo{
+    font-size:26px;
+  }
+
+  nav a{
+    font-size:14px;
+    margin:8px 10px;
+  }
+
+  /* HERO */
+  .contact-hero{
+    padding:45px 16px 25px;
+  }
+
+  .contact-hero h1{
+    font-size:28px;
+  }
+
+  .contact-hero p{
+    font-size:14px;
+  }
+
+  /* IMAGE */
+  .contact-image img{
+    height:240px;
+  }
+
+  /* FORM */
+  .contact-form{
+    padding:22px;
+  }
+
+  .contact-form button{
+    width:100%;
+    padding:14px;
+  }
+
+  /* INFO CARDS */
+  .info-card{
+    padding:22px;
+  }
+
+  /* MAP */
+  .map-container iframe{
+    height:230px;
+  }
+
+  /* FAQ */
+  .faq h2{
+    font-size:22px;
+  }
+
+  /* FOOTER */
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+  }
+
+  .footer-brand-text{
+    display:none;
+  }
+}
+
 </style>
 </head>
 
@@ -581,6 +798,25 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 </section>
 
 <footer class="decor-footer">
+<!-- WE DEAL IN SECTION -->
+<div class="footer-deal">
+  <h3>WE DEAL IN</h3>
+
+  <p>
+    Artificial Grass <span>|</span> Artifacts <span>|</span> Artificial Flowers <span>|</span>
+    Artificial Plants <span>|</span> Verticle Grass <span>|</span> Blinds <span>|</span>
+    Exterior Blinds <span>|</span> Curtains <span>|</span> Handicrafts <span>|</span>
+    Statues <span>|</span> Planters <span>|</span> Pebble Stones <span>|</span>
+    Indoor & Outdoor Fountains <span>|</span> Vases & Pots <span>|</span>
+    Wall & Floor Carpets <span>|</span> Wall Papers <span>|</span>
+    Wall Murals <span>|</span> Wall Decor <span>|</span> Wall Clocks <span>|</span>
+    Wet Cloth Hangers <span>|</span> Invisible Grills <span>|</span>
+    VOX Ceiling Designs & Wall Panels <span>|</span>
+    Mosquito Sliding Doors & many more
+  </p>
+
+  <h4>WE DO INTERIOR DESIGNS AND WORKS</h4>
+</div>
 
   <div class="footer-top">
 
@@ -605,8 +841,8 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
         <li><a href="#">Stores</a></li>
         <li><a href="#">The Blog</a></li>
         <li><a href="#">Gift Cards</a></li>
-        <li><a href="#">Easy Returns</a></li>
-        <li><a href="#">B2B Trade</a></li>
+        
+        
       </ul>
     </div>
 
@@ -614,8 +850,8 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
     <div class="footer-col">
       <h4>GET IN TOUCH</h4>
 
-      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
-      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      
+      <p><i class="fa-brands fa-whatsapp"></i> K.Naveen Kumar: +91 9666193636</p>
       <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
       <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
     </div>

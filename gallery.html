@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Store Gallery – Home Decor</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 /* ===== GENERAL ===== */
@@ -105,21 +106,7 @@ nav a:hover::after {
   opacity:.95;
 }
 
-.hero .btn{
-  margin-top:20px;
-  padding:14px 38px;
-  font-size:16px;
-  border-radius:30px;
-  background:#c9a74f;
-  color:#111;
-  border:none;
-  cursor:pointer;
-  transition:.3s;
-}
-.hero .btn:hover{
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 15px 35px rgba(201,167,79,.35);
-}
+
 
 
 
@@ -214,8 +201,9 @@ section{padding:80px 70px;}
   position:relative;
   overflow:hidden;
   padding:60px 50px 25px;
-  font-family:"Poppins", sans-serif;
+  font-family:"Playfair Display", serif;
 }
+
 
 /* TOP GRID */
 .footer-top{
@@ -278,15 +266,17 @@ section{padding:80px 70px;}
 }
 
 .footer-social a{
-  width:38px;
-  height:38px;
-  border:1px solid rgba(201,167,79,.6);
-  display:flex;
+  width:auto;
+  height:auto;
+  border:none;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
   color:#c9a74f;
   transition:.35s;
+  text-decoration: none;
 }
+
 
 .footer-social a:hover{
   background:#c9a74f;
@@ -343,6 +333,46 @@ section{padding:80px 70px;}
   margin-left:8px;
   filter:brightness(1.1);
 }
+/* WE DEAL IN SECTION */
+.footer-deal{
+  text-align:center;
+  padding:40px 20px 20px;
+  margin-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:relative;
+  z-index:2;
+}
+
+.footer-deal h3{
+  font-size:20px;
+  letter-spacing:2px;
+  color:#c9a74f;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.footer-deal p{
+  max-width:1100px;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.9;
+  color:#e6ecf5;
+  opacity:0.9;
+}
+
+.footer-deal span{
+  color:#c9a74f;
+  margin:0 6px;
+}
+
+.footer-deal h4{
+  margin-top:18px;
+  font-size:16px;
+  color:#c9a74f;
+  letter-spacing:1px;
+  font-weight:500;
+}
+
 
 /* RESPONSIVE */
 @media(max-width:992px){
@@ -421,7 +451,6 @@ section{padding:80px 70px;}
   <div class="hero-content">
     <h1>Step Into Luxury Living</h1>
     <p>Experience refined elegance through curated decor, from serene Buddha statues to exquisite floral accents that elevate your space.</p>
-    <button class="btn" onclick="location.href='gallery.html'">Explore Collection</button>
   </div>
 </section>
 
@@ -430,27 +459,56 @@ section{padding:80px 70px;}
 <!-- GALLERY -->
 <section class="gallery-section" id="gallery">
   <h2 class="section-title reveal">Store Gallery</h2>
+
   <div class="gallery-grid">
+
+    <!-- Row 1 -->
     <div class="gallery-card reveal">
-      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="Store Interior 1" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" onclick="openLightbox(this)">
     </div>
     <div class="gallery-card reveal">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="Store Interior 2" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" onclick="openLightbox(this)">
     </div>
     <div class="gallery-card reveal">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Store Interior 3" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a" onclick="openLightbox(this)">
     </div>
     <div class="gallery-card reveal">
-      <img src="living_space.jpg" alt="Store Interior 4" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013" onclick="openLightbox(this)">
     </div>
     <div class="gallery-card reveal">
-      <img src="elegance.jpg" alt="Store Interior 5" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Row 3 (NEW) -->
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200" onclick="openLightbox(this)">
     </div>
     <div class="gallery-card reveal">
-      <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea" alt="Store Interior 6" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf" onclick="openLightbox(this)">
     </div>
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1617104678098-de229db51175" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Row 4 (NEW) -->
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-card reveal">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d" onclick="openLightbox(this)">
+    </div>
+
   </div>
 </section>
+
 
 <!-- EXTRA SECTION AFTER GALLERY -->
 <section class="extra-section reveal">
@@ -466,6 +524,25 @@ section{padding:80px 70px;}
 
 <!-- FOOTER -->
   <footer class="decor-footer">
+<!-- WE DEAL IN SECTION -->
+<div class="footer-deal">
+  <h3>WE DEAL IN</h3>
+
+  <p>
+    Artificial Grass <span>|</span> Artifacts <span>|</span> Artificial Flowers <span>|</span>
+    Artificial Plants <span>|</span> Verticle Grass <span>|</span> Blinds <span>|</span>
+    Exterior Blinds <span>|</span> Curtains <span>|</span> Handicrafts <span>|</span>
+    Statues <span>|</span> Planters <span>|</span> Pebble Stones <span>|</span>
+    Indoor & Outdoor Fountains <span>|</span> Vases & Pots <span>|</span>
+    Wall & Floor Carpets <span>|</span> Wall Papers <span>|</span>
+    Wall Murals <span>|</span> Wall Decor <span>|</span> Wall Clocks <span>|</span>
+    Wet Cloth Hangers <span>|</span> Invisible Grills <span>|</span>
+    VOX Ceiling Designs & Wall Panels <span>|</span>
+    Mosquito Sliding Doors & many more
+  </p>
+
+  <h4>WE DO INTERIOR DESIGNS AND WORKS</h4>
+</div>
 
   <div class="footer-top">
 
@@ -490,8 +567,8 @@ section{padding:80px 70px;}
         <li><a href="#">Stores</a></li>
         <li><a href="#">The Blog</a></li>
         <li><a href="#">Gift Cards</a></li>
-        <li><a href="#">Easy Returns</a></li>
-        <li><a href="#">B2B Trade</a></li>
+        
+        
       </ul>
     </div>
 
@@ -499,8 +576,8 @@ section{padding:80px 70px;}
     <div class="footer-col">
       <h4>GET IN TOUCH</h4>
 
-      <p><i class="fa-brands fa-whatsapp"></i> Nikhil : +91 9811536888</p>
-      <p><i class="fa-brands fa-whatsapp"></i> Anand : +91 9811331181</p>
+      <p><i class="fa-brands fa-whatsapp"></i> K.Naveen Kumar: +91 9666193636</p>
+      
       <p><i class="fa-regular fa-envelope"></i> homedecor@gmail.com</p>
       <p><i class="fa-solid fa-location-dot"></i> Our Stores</p>
     </div>
@@ -510,11 +587,12 @@ section{padding:80px 70px;}
       <h4>FOLLOW US</h4>
 
       <div class="footer-social">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      </div>
+  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
 
       <h5>EXPERIENCE THE HOME DECOR APP</h5>
 
